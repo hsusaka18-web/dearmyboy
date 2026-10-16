@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Letter For Khin 💙</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pyidaungsu:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', sans-serif;
+        }
+
+        body {
+            /* Aesthetic Soft Sky Blue, Ice Blue & Cream Gradient */
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd, #f0fdf4, #e0e7ff);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating background elements - z-index မြှင့်ထား၍ frame ပေါ်ပါ ဖြတ်ပျံမည် */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .heart-particle {
+            position: absolute;
+            color: rgba(56, 189, 248, 0.6);
+            font-size: 22px;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            50% { opacity: 0.9; }
+            100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+        }
+
+        /* Main Container Card with Fade-in Animation */
+        .container {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.93);
+            backdrop-filter: blur(12px);
+            width: 90%;
+            max-width: 450px;
+            padding: 24px;
+            border-radius: 28px;
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
+            text-align: center;
+            animation: fadeInCard 0.8s ease-in-out;
+            border: 2px solid rgba(255, 255, 255, 0.95);
+        }
+
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Page 1: Soft Blue Envelope */
+        .page-1 h2 {
+            color: #0284c7;
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .envelope-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .envelope-box {
+            background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+            width: 100%;
+            height: 200px;
+            border-radius: 18px;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .envelope-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(56, 189, 248, 0.5);
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #0ea5e9;
+            clip-path: polygon(0 0, 50% 100%, 100% 0);
+            z-index: 2;
+        }
+
+        .envelope-heart {
+            position: relative;
+            z-index: 3;
+            font-size: 40px;
+            margin-top: 20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .envelope-hint {
+            margin-top: 15px;
+            color: #0369a1;
+            font-size: 15px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 18px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            border: 1px solid #bae6fd;
+        }
+
+        /* Page Content Styles */
+        .header-title {
+            color: #0369a1;
+            font-size: 28px;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 8px;
+            animation: fadeInText 0.6s ease;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-box {
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            text-align: left;
+            background: rgba(240, 249, 255, 0.85);
+            padding: 14px;
+            border-radius: 14px;
+            border: 1px solid #bae6fd;
+        }
+
+        .gif-container {
+            margin: 8px 0;
+        }
+
+        .gif-container img {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .question-text {
+            font-size: 15px;
+            font-weight: bold;
+            color: #0369a1;
+            margin: 10px 0 8px 0;
+        }
+
+        /* Buttons Styling */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            position: relative;
+            min-height: 45px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: white;
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+        }
+
+        .btn-no {
+            background: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .btn-no:hover {
+            background: #e0f2fe;
+        }
+
+        /* Stacked Polaroid Memory Section - Continue ခလုတ်နဲ့ မထိအောင် နေရာလွတ်ချိန်ညှိထားသည် */
+        .memory-subtitle {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .polaroid-stack-container {
+            position: relative;
+            width: 210px;
+            height: 255px;
+            margin: 5px auto 12px auto;
+            cursor: pointer;
+        }
+
+        .polaroid-card {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 10px 10px 22px 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            border-radius: 8px;
+            width: 195px;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+
+        .polaroid-card img {
+            width: 100%;
+            height: 165px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .polaroid-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 13.5px;
+            color: #0284c7;
+            margin-top: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Audio -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="crush.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Background Floating Elements -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container" id="mainContainer">
+
+        <!-- PAGE 1: Envelope -->
+        <div class="page-1" id="page1">
+            <h2>You have a letter... 💌</h2>
+            <div class="envelope-container" onclick="goToPage2()">
+                <div class="envelope-box">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-heart">💙</div>
+                </div>
+                <div class="envelope-hint">စာအိတ်ကို နှိပ်ပါ 💌</div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: Love Message -->
+        <div class="page-2 hidden" id="page2">
+            <div class="header-title">Dear my little boy🍓</div>
+            <div class="message-box">
+                ကျွန်မဖက်ကတော့ ချစ်ကြောင်းကြိုက်ကြောင်းပြောလာတာ တောက်လျှောက်ပဲ နောက်နှစ်လဆိုတစ်နှစ်တောင်ပြည့်တော့မှာ အဲတော့ ဟောဒီဖက်ကို စိတ်ယိုင်ယိုင်၊ မယိုင်ယိုင် ပြန်ကြိုက်လိုက်ပါတော့😞🍓<br>
+            </div>
+            <div class="gif-container">
+                <img id="dynamicGif" src="dance.gif" alt="Cute Bear">
+            </div>
+            <div class="question-text">မောင်လေးရဲ့ နှုန်းသားလေးအဖြေကရော.....💌</div>
+            <div class="btn-group" id="btnGroup">
+                <button class="btn btn-yes" onclick="goToPage3()">လက်ခံတယ်</button>
+                <button class="btn btn-no" id="noBtn" onclick="handleNoClick()">🥺 ငြင်းတယ်</button>
+            </div>
+        </div>
+
+        <!-- PAGE 3: Our Memories (5 Photos Stacked - Fixed Spacing with Continue Button) -->
+        <div class="page-3 hidden" id="page3">
+            <div class="header-title"> Memories ✨</div>
+            <div class="memory-subtitle">ပုံပေါ်ကို နှိပ်ပြီးကြည့်ပါ 📸</div>
+            
+            <div class="polaroid-stack-container" id="polaroidStack" onclick="nextPhoto()">
+                <!-- Photo 5 (Bottom) -->
+                <div class="polaroid-card" id="polaroid5" style="transform: translateX(-50%) rotate(4deg); z-index: 1;">
+                    <img src="y4.jpg" alt="Memory 5">
+                    <div class="polaroid-caption">🍓လက်တွေကအစ ကြိုက်နေရတာ😞🍓</div>
+                </div>
+                <!-- Photo 4 -->
+                <div class="polaroid-card" id="polaroid4" style="transform: translateX(-50%) rotate(-3deg); z-index: 2;">
+                    <img src="y3.jpg" alt="Memory 4">
+                    <div class="polaroid-caption">အစ်မရဲ့ ကလေး"မလုပ်ချင်ဘူးလား😞</div>
+                </div>
+                <!-- Photo 3 -->
+                <div class="polaroid-card" id="polaroid3" style="transform: translateX(-50%) rotate(2deg); z-index: 3;">
+                    <img src="y2.jpg" alt="Memory 3">
+                    <div class="polaroid-caption">အဲတုန်းက နှုတ်ခမ်းမွေးရေးရေးလေးကိုလဲ ကြိုက်ပြန်ရော😞💗</div>
+                </div>
+                <!-- Photo 2 -->
+                <div class="polaroid-card" id="polaroid2" style="transform: translateX(-50%) rotate(-2deg); z-index: 4;">
+                    <img src="y1.jpg" alt="Memory 2">
+                    <div class="polaroid-caption">နေမကောင်းတဲ့ရုပ်လေးကလဲ ချစ်မွေးလေး💗</div>
+                </div>
+                <!-- Photo 1 (Top) -->
+                <div class="polaroid-card" id="polaroid1" style="transform: translateX(-50%) rotate(1deg); z-index: 5;">
+                    <img src="y.jpg" alt="Memory 1">
+                    <div class="polaroid-caption">အဲတုန်းက ကလေး" ခုလဲ ကလေး"ပဲ😞🍓</div>
+                </div>
+            </div>
+
+            <button class="btn btn-yes" style="width: 100%; padding: 10px; margin-top: 5px;" onclick="goToPage4()">Continue 💙</button>
+        </div>
+
+        <!-- PAGE 4: Final Success Page -->
+        <div class="page-4 hidden" id="page4">
+            <div class="header-title">ငြင်းမှာသိသားပဲ 😞</div>
+            <div class="message-box" style="text-align: center; padding: 12px;">
+                ငြင်းလဲ ကြိုက်မှာပဲ ဟဟ😹၊ ငြင်းလို့ အီး‌"ကျွေးတယ် ရော့ကွာ....<br><br>
+            </div>
+            <div class="gif-container">
+                <img src="e.gif" alt="Hugging Bears" style="width: 110px; height: 110px;">
+            </div>
+            <div style="color: #0369a1; font-weight: bold; font-size: 14px; margin-top: 5px;">
+                🤍 I always love you .....
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Audio playback setup
+        const bgMusic = document.getElementById('bgMusic');
+
+        function playAudio() {
+            bgMusic.play().catch(error => {
+                console.log("Audio play deferred to user interaction");
+            });
+        }
+
+        // Generate Floating Elements Background
+        const heartsContainer = document.getElementById('floatingHearts');
+        const heartSymbols = ['💙', '✨', '⭐', '💙', '💫', '🦋', '💧'];
+        
+        for (let i = 0; i < 22; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-particle');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            heart.style.animationDelay = (Math.random() * 5) + 's';
+            heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            heartsContainer.appendChild(heart);
+        }
+
+        // Page Navigation Logic with smooth transition
+        function goToPage2() {
+            playAudio();
+            const p1 = document.getElementById('page1');
+            const p2 = document.getElementById('page2');
+            p1.style.opacity = '0';
+            setTimeout(() => {
+                p1.classList.add('hidden');
+                p2.classList.remove('hidden');
+                p2.style.animation = 'fadeInCard 0.6s ease-in-out';
+            }, 300);
+        }
+
+        let noClickCount = 0;
+        const noBtnTexts = [
+            "ငြင်းရင် စိတ်ဆိုးမှာနော် 😤",
+            "တကယ်ကြီး ငြင်းမှာလား? 😢",
+            "စဉ်းစားပေးပါနော် 🥺",
+            "မငြင်းပါနဲ့လို့ 🥺",
+            "ထပ်နှိပ်လို့ မရတော့ဘူးနော်! 😤"
+        ];
+
+        const gifList = [
+            "dance.gif",
+            "hee.gif",
+            "angry.gif",
+            "angry1.gif",
+            "angry2.gif"
+        ];
+
+        function handleNoClick() {
+            const noBtn = document.getElementById('noBtn');
+            const dynamicGif = document.getElementById('dynamicGif');
+
+            if (noClickCount < noBtnTexts.length) {
+                noBtn.innerText = noBtnTexts[noClickCount];
+                dynamicGif.src = gifList[noClickCount];
+                
+                const randomX = (Math.random() - 0.5) * 60;
+                const randomY = (Math.random() - 0.5) * 30;
+                noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                noClickCount++;
+            } else {
+                noBtn.style.display = 'none';
+            }
+        }
+
+        // Interactive 5 Photos Stack Click Logic
+        let currentPhotoIndex = 1;
+        const totalPhotos = 5;
+
+        function nextPhoto() {
+            if (currentPhotoIndex <= totalPhotos) {
+                const currentCard = document.getElementById('polaroid' + currentPhotoIndex);
+                if (currentCard) {
+                    currentCard.style.transform = 'translateX(-220%) rotate(-25deg)';
+                    currentCard.style.opacity = '0';
+                    currentCard.style.pointerEvents = 'none';
+                }
+                currentPhotoIndex++;
+            }
+            
+            if (currentPhotoIndex > totalPhotos) {
+                setTimeout(() => {
+                    for (let i = 1; i <= totalPhotos; i++) {
+                        setTimeout(() => {
+                            const card = document.getElementById('polaroid' + i);
+                            if (card) {
+                                card.style.transform = '';
+                                card.style.opacity = '1';
+                                card.style.pointerEvents = 'auto';
+                            }
+                        }, (i - 1) * 200);
+                    }
+                    currentPhotoIndex = 1;
+                }, 400);
+            }
+        }
+
+        function goToPage3() {
+            const p2 = document.getElementById('page2');
+            const p3 = document.getElementById('page3');
+            p2.style.opacity = '0';
+            setTimeout(() => {
+                p2.classList.add('hidden');
+                p3.classList.remove('hidden');
+                p3.style.animation = 'fadeInCard 0.6s ease-in-out';
+            }, 300);
+        }
+
+        function goToPage4() {
+            const p3 = document.getElementById('page3');
+            const p4 = document.getElementById('page4');
+            p3.style.opacity = '0';
+            setTimeout(() => {
+                p3.classList.add('hidden');
+                p4.classList.remove('hidden');
+                p4.style.animation = 'fadeInCard 0.6s ease-in-out';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
