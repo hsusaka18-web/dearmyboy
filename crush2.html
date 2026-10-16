@@ -32,7 +32,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Floating background elements - z-index မြှင့်ထား၍ frame ပေါ်ပါ ဖြတ်ပျံမည် */
+        /* Floating background elements */
         .floating-hearts {
             position: absolute;
             width: 100%;
@@ -61,9 +61,9 @@
             z-index: 10;
             background: rgba(255, 255, 255, 0.93);
             backdrop-filter: blur(12px);
-            width: 90%;
-            max-width: 450px;
-            padding: 24px;
+            width: 92%;
+            max-width: 420px;
+            padding: 20px 18px;
             border-radius: 28px;
             box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15);
             text-align: center;
@@ -98,7 +98,7 @@
         .envelope-box {
             background: linear-gradient(135deg, #7dd3fc, #38bdf8);
             width: 100%;
-            height: 200px;
+            height: 190px;
             border-radius: 18px;
             position: relative;
             box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35);
@@ -119,7 +119,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100px;
+            height: 95px;
             background: #0ea5e9;
             clip-path: polygon(0 0, 50% 100%, 100% 0);
             z-index: 2;
@@ -128,8 +128,8 @@
         .envelope-heart {
             position: relative;
             z-index: 3;
-            font-size: 40px;
-            margin-top: 20px;
+            font-size: 38px;
+            margin-top: 18px;
             animation: pulse 1.5s infinite;
         }
 
@@ -140,12 +140,12 @@
         }
 
         .envelope-hint {
-            margin-top: 15px;
+            margin-top: 14px;
             color: #0369a1;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
             background: rgba(255, 255, 255, 0.95);
-            padding: 8px 18px;
+            padding: 7px 16px;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.04);
             border: 1px solid #bae6fd;
@@ -154,9 +154,9 @@
         /* Page Content Styles */
         .header-title {
             color: #0369a1;
-            font-size: 28px;
+            font-size: 26px;
             font-family: 'Dancing Script', cursive;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             animation: fadeInText 0.6s ease;
         }
 
@@ -166,48 +166,48 @@
         }
 
         .message-box {
-            font-size: 14px;
+            font-size: 13.5px;
             color: #334155;
-            line-height: 1.6;
-            margin-bottom: 12px;
+            line-height: 1.5;
+            margin-bottom: 10px;
             text-align: left;
             background: rgba(240, 249, 255, 0.85);
-            padding: 14px;
-            border-radius: 14px;
+            padding: 12px;
+            border-radius: 12px;
             border: 1px solid #bae6fd;
         }
 
         .gif-container {
-            margin: 8px 0;
+            margin: 6px 0;
         }
 
         .gif-container img {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
             border-radius: 12px;
         }
 
         .question-text {
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: bold;
             color: #0369a1;
-            margin: 10px 0 8px 0;
+            margin: 8px 0 6px 0;
         }
 
         /* Buttons Styling */
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 8px;
             position: relative;
-            min-height: 45px;
+            min-height: 42px;
         }
 
         .btn {
-            padding: 10px 24px;
-            font-size: 14px;
+            padding: 9px 22px;
+            font-size: 13.5px;
             font-weight: bold;
             border: none;
             border-radius: 25px;
@@ -238,19 +238,19 @@
             background: #e0f2fe;
         }
 
-        /* Stacked Polaroid Memory Section - Continue ခလုတ်နဲ့ မထိအောင် နေရာလွတ်ချိန်ညှိထားသည် */
+        /* Stacked Polaroid Memory Section - Responsive & Perfectly Balanced for Mobile */
         .memory-subtitle {
-            font-size: 13px;
+            font-size: 12.5px;
             color: #64748b;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-style: italic;
         }
 
         .polaroid-stack-container {
             position: relative;
-            width: 210px;
-            height: 255px;
-            margin: 5px auto 12px auto;
+            width: 190px;
+            height: 230px;
+            margin: 4px auto 10px auto;
             cursor: pointer;
         }
 
@@ -260,27 +260,47 @@
             left: 50%;
             transform: translateX(-50%);
             background: white;
-            padding: 10px 10px 22px 10px;
+            padding: 8px 8px 18px 8px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
             border-radius: 8px;
-            width: 195px;
+            width: 175px;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             user-select: none;
         }
 
         .polaroid-card img {
             width: 100%;
-            height: 165px;
+            height: 140px;
             object-fit: cover;
             border-radius: 4px;
         }
 
         .polaroid-caption {
             font-family: 'Dancing Script', cursive;
-            font-size: 13.5px;
+            font-size: 13px;
             color: #0284c7;
-            margin-top: 8px;
+            margin-top: 6px;
             text-align: center;
+        }
+
+        /* Mobile Responsive Media Query */
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 16px 12px;
+                border-radius: 22px;
+            }
+            .polaroid-stack-container {
+                width: 175px;
+                height: 215px;
+            }
+            .polaroid-card {
+                width: 160px;
+                padding: 7px 7px 15px 7px;
+            }
+            .polaroid-card img {
+                height: 125px;
+            }
         }
     </style>
 </head>
@@ -325,7 +345,7 @@
             </div>
         </div>
 
-        <!-- PAGE 3: Our Memories (5 Photos Stacked - Fixed Spacing with Continue Button) -->
+        <!-- PAGE 3: Our Memories (5 Photos Stacked - Fully Responsive) -->
         <div class="page-3 hidden" id="page3">
             <div class="header-title"> Memories ✨</div>
             <div class="memory-subtitle">ပုံပေါ်ကို နှိပ်ပြီးကြည့်ပါ 📸</div>
@@ -356,9 +376,9 @@
                     <img src="y.jpg" alt="Memory 1">
                     <div class="polaroid-caption">အဲတုန်းက ကလေး" ခုလဲ ကလေး"ပဲ😞🍓</div>
                 </div>
-            </div>
+            </div><br><br>
 
-            <button class="btn btn-yes" style="width: 100%; padding: 10px; margin-top: 5px;" onclick="goToPage4()">Continue 💙</button>
+            <button class="btn btn-yes" style="width: 100%; padding: 9px; margin-top: 4px;" onclick="goToPage4()">Continue 💙</button>
         </div>
 
         <!-- PAGE 4: Final Success Page -->
@@ -391,7 +411,7 @@
         const heartsContainer = document.getElementById('floatingHearts');
         const heartSymbols = ['💙', '✨', '⭐', '💙', '💫', '🦋', '💧'];
         
-        for (let i = 0; i < 22; i++) {
+        for (let i = 0; i < 20; i++) {
             const heart = document.createElement('div');
             heart.classList.add('heart-particle');
             heart.style.left = Math.random() * 100 + 'vw';
